@@ -227,5 +227,113 @@
                 
                 <a href="https://dp92t0mhjbqu9.cloudfront.net/yonorummyagent.apk" class="top-card">
                     <span class="badge">1</span>
-                    <img src="https://img.icons8.com/color/144/joker-card.png" alt="Y
-                    
+                    <img src="https://img.icons8.com/color/144/joker-card.png" alt="Yono Rummy">
+                    <p>Yono Rummy</p>
+                </a>
+
+                <a href="https://spin777ff.com/?code=7V9FYWPMDEW&t=1779605799" class="top-card">
+                    <span class="badge">2</span>
+                    <img src="https://img.icons8.com/color/144/slot-machine.png" alt="Spin 777">
+                    <p>Spin 777</p>
+                </a>
+
+                <a href="https://bkfadsegtgs.safelyearnmillionsbysharingonepersonaqfxzqyj8.com/?code=ADEX2NMGVQT&t=1779605852" class="top-card">
+                    <span class="badge">3</span>
+                    <img src="https://img.icons8.com/color/144/casino-chips.png" alt="Spin Crush">
+                    <p>Spin Crush</p>
+                </a>
+
+            </div>
+        </div>
+
+        <h2 class="section-title">✨ All Games List</h2>
+
+        <div id="gamesList">
+            <div class="game-list-item">
+                <div class="game-info-box">
+                    <img src="https://img.icons8.com/color/144/joker-card.png" alt="Yono Rummy">
+                    <div class="game-details">
+                        <h3 class="game-name">Yono Rummy <span class="tag-new">NEW</span></h3>
+                        <p class="bonus-text">Bonus 100<br>Withdrawal 100</p>
+                        <div class="stars">★★★★★</div>
+                    </div>
+                </div>
+                <a href="https://dp92t0mhjbqu9.cloudfront.net/yonorummyagent.apk" class="download-btn">Download</a>
+            </div>
+
+            <div class="game-list-item">
+                <div class="game-info-box">
+                    <img src="https://img.icons8.com/color/144/slot-machine.png" alt="Spin 777">
+                    <div class="game-details">
+                        <h3 class="game-name">Spin 777 <span class="tag-new">NEW</span></h3>
+                        <p class="bonus-text">Bonus 100<br>Withdrawal 100</p>
+                        <div class="stars">★★★★★</div>
+                    </div>
+                </div>
+                <a href="https://spin777ff.com/?code=7V9FYWPMDEW&t=1779605799" class="download-btn">Download</a>
+            </div>
+
+            <div class="game-list-item">
+                <div class="game-info-box">
+                    <img src="https://img.icons8.com/color/144/casino-chips.png" alt="Spin Crush">
+                    <div class="game-details">
+                        <h3 class="game-name">Spin Crush <span class="tag-new">NEW</span></h3>
+                        <p class="bonus-text">Bonus 100<br>Withdrawal 100</p>
+                        <div class="stars">★★★★★</div>
+                    </div>
+                </div>
+                <a href="https://bkfadsegtgs.safelyearnmillionsbysharingonepersonaqfxzqyj8.com/?code=ADEX2NMGVQT&t=1779605852" class="download-btn">Download</a>
+            </div>
+
+            <div class="game-list-item">
+                <div class="game-info-box">
+                    <img src="https://img.icons8.com/color/144/dice.png" alt="567 slots">
+                    <div class="game-details">
+                        <h3 class="game-name">567 slots</h3>
+                        <p class="bonus-text">Bonus 100<br>Withdrawal 100</p>
+                        <div class="stars">★★★★★</div>
+                    </div>
+                </div>
+                <a href="https://567slotsrefer08.cc/?code=4NY21SD2TVM&t=1779605926" class="download-btn">Download</a>
+            </div>
+
+            <div class="game-list-item">
+                <div class="game-info-box">
+                    <img src="https://img.icons8.com/color/144/poker-cards.png" alt="IND rummy">
+                    <div class="game-details">
+                        <h3 class="game-name">IND Rummy</h3>
+                        <p class="bonus-text">Bonus 100<br>Withdrawal 100</p>
+                        <div class="stars">★★★★★</div>
+                    </div>
+                </div>
+                <a href="https://indrummym.in/?code=XU7ZAHJBQM3&t=1779605993" class="download-btn">Download</a>
+            </div>
+        </div>
+
+    </main>
+
+    <script>
+        function searchGames() {
+            let input = document.getElementById('gameSearch').value.toLowerCase();
+            let gameItems = document.getElementsByClassName('game-list-item');
+            let topSection = document.getElementById('topSection');
+
+            if (input.length > 0) {
+                topSection.style.display = 'none';
+            } else {
+                topSection.style.display = 'block';
+            }
+
+            for (let i = 0; i < gameItems.length; i++) {
+                let gameName = gameItems[i].getElementsByClassName('game-name')[0].innerText.toLowerCase();
+                if (gameName.includes(input)) {
+                    gameItems[i].style.display = "flex";
+                } else {
+                    gameItems[i].style.display = "none";
+                }
+            }
+        }
+    </script>
+
+</body>
+</html>
