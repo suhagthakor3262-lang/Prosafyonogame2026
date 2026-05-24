@@ -1,12 +1,11 @@
-top yono game 2026
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yono Game Zone</title>
+    <title>Top yono game 2026</title>
     <style>
-        /* Base Styles */
+        /* Base Styles */\u003Chtml lang=\"en\">
         * {
             margin: 0;
             padding: 0;
