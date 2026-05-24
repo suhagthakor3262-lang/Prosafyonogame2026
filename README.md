@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>  <meta charset="UTF-8">
+<head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Top yono game 2026</title>
     <style>
-   * {     /* Base Styles */\u003Chtml lang=\"en\">
+        /* Base Styles */
         * {
             margin: 0;
             padding: 0;
@@ -56,6 +57,7 @@
             border: 1px solid #ccc;
             border-radius: 4px;
             outline: none;
+            color: #333;
         }
 
         /* Section Container */
@@ -139,6 +141,7 @@
             justify-content: space-between;
             margin-bottom: 12px;
             box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+            transition: all 0.2s ease;
         }
 
         .game-info-box {
@@ -212,97 +215,125 @@
             <div class="menu-icon">&#9776;</div>
             <div class="logo">🎮 Yono Game<br>Zone</div>
         </div>
-        <input type="text" class="search-box" placeholder="Search...">
+        <input type="text" id="gameSearch" class="search-box" placeholder="Search games..." onkeyup="searchGames()">
     </header>
 
     <main class="container">
         
-        <h2 class="section-title">🏆 Top 3 Games</h2>
-        <div class="top-games-grid">
-            
-            <a href="https://dp92t0mhjbqu9.cloudfront.net/yonorummyagent.apk" class="top-card">
-                <span class="badge">1</span>
-                <img src="https://kommodo.ai/i/7S8lx5PODYclMxvtgyJg" alt="Yono Rummy">
-                <p>Yono Rummy</p>
-            </a>
+        <div id="topSection">
+            <h2 class="section-title">🏆 Top 3 Games</h2>
+            <div class="top-games-grid">
+                
+                <a href="https://dp92t0mhjbqu9.cloudfront.net/yonorummyagent.apk" class="top-card">
+                    <span class="badge">1</span>
+                    <img src="https://kommodo.ai/i/7S8lx5PODYclMxvtgyJg/raw" alt="Yono Rummy">
+                    <p>Yono Rummy</p>
+                </a>
 
-            <a href="https://spin777ff.com/?code=7V9FYWPMDEW&t=1779605799" class="top-card">
-                <span class="badge">2</span>
-                <img src="https://kommodo.ai/i/GKnzMCTD18tNEOb9fXH2" alt="Spin 777">
-                <p>Spin 777</p>
-            </a>
+                <a href="https://spin777ff.com/?code=7V9FYWPMDEW&t=1779605799" class="top-card">
+                    <span class="badge">2</span>
+                    <img src="https://kommodo.ai/i/GKnzMCTD18tNEOb9fXH2/raw" alt="Spin 777">
+                    <p>Spin 777</p>
+                </a>
 
-            <a href="https://bkfadsegtgs.safelyearnmillionsbysharingonepersonaqfxzqyj8.com/?code=ADEX2NMGVQT&t=1779605852" class="top-card">
-                <span class="badge">3</span>
-                <img src="https://kommodo.ai/i/nPz8bs8X1zwcww192mHh" alt="Spin Crush">
-                <p>Spin Crush</p>
-            </a>
+                <a href="https://bkfadsegtgs.safelyearnmillionsbysharingonepersonaqfxzqyj8.com/?code=ADEX2NMGVQT&t=1779605852" class="top-card">
+                    <span class="badge">3</span>
+                    <img src="https://kommodo.ai/i/nPz8bs8X1zwcww192mHh/raw" alt="Spin Crush">
+                    <p>Spin Crush</p>
+                </a>
 
+            </div>
         </div>
 
         <h2 class="section-title">✨ All Games List</h2>
 
-        <div class="game-list-item">
-            <div class="game-info-box">
-                <img src="https://kommodo.ai/i/7S8lx5PODYclMxvtgyJg" alt="Yono Rummy">
-                <div class="game-details">
-                    <h3>Yono Rummy <span class="tag-new">NEW</span></h3>
-                    <p class="bonus-text">Bonus 100<br>Withdrawal 100</p>
-                    <div class="stars">★★★★★</div>
+        <div id="gamesList">
+            <div class="game-list-item">
+                <div class="game-info-box">
+                    <img src="https://kommodo.ai/i/7S8lx5PODYclMxvtgyJg/raw" alt="Yono Rummy">
+                    <div class="game-details">
+                        <h3 class="game-name">Yono Rummy <span class="tag-new">NEW</span></h3>
+                        <p class="bonus-text">Bonus 100<br>Withdrawal 100</p>
+                        <div class="stars">★★★★★</div>
+                    </div>
                 </div>
+                <a href="https://dp92t0mhjbqu9.cloudfront.net/yonorummyagent.apk" class="download-btn">Download</a>
             </div>
-            <a href="https://dp92t0mhjbqu9.cloudfront.net/yonorummyagent.apk" class="download-btn">Download</a>
-        </div>
 
-        <div class="game-list-item">
-            <div class="game-info-box">
-                <img src="https://kommodo.ai/i/GKnzMCTD18tNEOb9fXH2" alt="Spin 777">
-                <div class="game-details">
-                    <h3>Spin 777 <span class="tag-new">NEW</span></h3>
-                    <p class="bonus-text">Bonus 100<br>Withdrawal 100</p>
-                    <div class="stars">★★★★★</div>
+            <div class="game-list-item">
+                <div class="game-info-box">
+                    <img src="https://kommodo.ai/i/GKnzMCTD18tNEOb9fXH2/raw" alt="Spin 777">
+                    <div class="game-details">
+                        <h3 class="game-name">Spin 777 <span class="tag-new">NEW</span></h3>
+                        <p class="bonus-text">Bonus 100<br>Withdrawal 100</p>
+                        <div class="stars">★★★★★</div>
+                    </div>
                 </div>
+                <a href="https://spin777ff.com/?code=7V9FYWPMDEW&t=1779605799" class="download-btn">Download</a>
             </div>
-            <a href="https://spin777ff.com/?code=7V9FYWPMDEW&t=1779605799" class="download-btn">Download</a>
-        </div>
 
-        <div class="game-list-item">
-            <div class="game-info-box">
-                <img src="https://kommodo.ai/i/nPz8bs8X1zwcww192mHh" alt="Spin Crush">
-                <div class="game-details">
-                    <h3>Spin Crush <span class="tag-new">NEW</span></h3>
-                    <p class="bonus-text">Bonus 100<br>Withdrawal 100</p>
-                    <div class="stars">★★★★★</div>
+            <div class="game-list-item">
+                <div class="game-info-box">
+                    <img src="https://kommodo.ai/i/nPz8bs8X1zwcww192mHh/raw" alt="Spin Crush">
+                    <div class="game-details">
+                        <h3 class="game-name">Spin Crush <span class="tag-new">NEW</span></h3>
+                        <p class="bonus-text">Bonus 100<br>Withdrawal 100</p>
+                        <div class="stars">★★★★★</div>
+                    </div>
                 </div>
+                <a href="https://bkfadsegtgs.safelyearnmillionsbysharingonepersonaqfxzqyj8.com/?code=ADEX2NMGVQT&t=1779605852" class="download-btn">Download</a>
             </div>
-            <a href="https://bkfadsegtgs.safelyearnmillionsbysharingonepersonaqfxzqyj8.com/?code=ADEX2NMGVQT&t=1779605852" class="download-btn">Download</a>
-        </div>
 
-        <div class="game-list-item">
-            <div class="game-info-box">
-                <img src="https://kommodo.ai/i/qJM9vbDfqYD5rC2ZZQ80" alt="567 slots">
-                <div class="game-details">
-                    <h3>567 slots</h3>
-                    <p class="bonus-text">Bonus 100<br>Withdrawal 100</p>
-                    <div class="stars">★★★★★</div>
+            <div class="game-list-item">
+                <div class="game-info-box">
+                    <img src="https://kommodo.ai/i/qJM9vbDfqYD5rC2ZZQ80/raw" alt="567 slots">
+                    <div class="game-details">
+                        <h3 class="game-name">567 slots</h3>
+                        <p class="bonus-text">Bonus 100<br>Withdrawal 100</p>
+                        <div class="stars">★★★★★</div>
+                    </div>
                 </div>
+                <a href="https://567slotsrefer08.cc/?code=4NY21SD2TVM&t=1779605926" class="download-btn">Download</a>
             </div>
-            <a href="https://567slotsrefer08.cc/?code=4NY21SD2TVM&t=1779605926" class="download-btn">Download</a>
-        </div>
 
-        <div class="game-list-item">
-            <div class="game-info-box">
-                <img src="https://kommodo.ai/i/8MwDhM3mLfBlpVG8eG9c" alt="IND rummy">
-                <div class="game-details">
-                    <h3>IND rummy</h3>
-                    <p class="bonus-text">Bonus 100<br>Withdrawal 100</p>
-                    <div class="stars">★★★★★</div>
+            <div class="game-list-item">
+                <div class="game-info-box">
+                    <img src="https://kommodo.ai/i/8MwDhM3mLfBlpVG8eG9c/raw" alt="IND rummy">
+                    <div class="game-details">
+                        <h3 class="game-name">IND Rummy</h3>
+                        <p class="bonus-text">Bonus 100<br>Withdrawal 100</p>
+                        <div class="stars">★★★★★</div>
+                    </div>
                 </div>
+                <a href="https://indrummym.in/?code=XU7ZAHJBQM3&t=1779605993" class="download-btn">Download</a>
             </div>
-            <a href="https://indrummym.in/?code=XU7ZAHJBQM3&t=1779605993" class="download-btn">Download</a>
         </div>
 
     </main>
+
+    <script>
+        function searchGames() {
+            let input = document.getElementById('gameSearch').value.toLowerCase();
+            let gameItems = document.getElementsByClassName('game-list-item');
+            let topSection = document.getElementById('topSection');
+
+            // Hide Top 3 section when searching to keep results clean
+            if (input.length > 0) {
+                topSection.style.display = 'none';
+            } else {
+                topSection.style.display = 'block';
+            }
+
+            for (let i = 0; i < gameItems.length; i++) {
+                let gameName = gameItems[i].getElementsByClassName('game-name')[0].innerText.toLowerCase();
+                if (gameName.includes(input)) {
+                    gameItems[i].style.display = "flex";
+                } else {
+                    gameItems[i].style.display = "none";
+                }
+            }
+        }
+    </script>
 
 </body>
 </html>
