@@ -1,8 +1,10 @@
 backend:
-  name: git-gateway
-  branch: main # Agar aapki branch ka naam 'master' hai toh yahan master likhein
+  name: github
+  repo: suhagthakor3262-lang/username.github.13 # Aapki repository ka naam
+  branch: main
+  base_url: https://identity.netlify.com # Yeh free identity tool background mein kaam karega
 
-media_folder: "images" # Aapki images is folder mein save hongi
+media_folder: "images"
 public_folder: "images"
 
 collections:
