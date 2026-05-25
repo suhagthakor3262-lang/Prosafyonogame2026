@@ -353,3 +353,75 @@
     </script>
 </body>
 </html>
+/* Banner Main Container Style */
+.telegram-banner-link {
+  text-decoration: none; /* Link underline hatane ke liye */
+  display: block;
+  margin: 15px auto;
+  max-width: 600px; /* Aap isse chota-bada kar sakte hain */
+  width: 90%;
+}
+
+.telegram-banner-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #f0f7ff; /* Halka blue background */
+  border: 2px solid #1e65a3; /* Dark blue border */
+  border-radius: 12px; /* Curved corners */
+  padding: 10px 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+  position: relative;
+}
+
+/* Rolling Text Container */
+.marquee-box {
+  flex: 1;
+  overflow: hidden;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+}
+
+/* Rolling Text Animation */
+.marquee-text {
+  display: inline-block;
+  font-family: Arial, sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  color: #114b7a; /* Image jaisa blue color */
+  padding-right: 50px;
+  animation: rollText 10s linear infinite; /* 10s se speed control hogi */
+}
+
+@keyframes rollText {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* Button Style */
+.join-btn {
+  background-color: #005691; /* Dark blue button */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  white-space: nowrap;
+  margin-left: 10px;
+  transition: background 0.3s ease;
+  z-index: 2; /* Taaki button text ke upar rahe */
+}
+
+/* Button Hover Effect */
+.join-btn:hover {
+  background-color: #003d66;
+}
