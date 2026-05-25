@@ -352,13 +352,22 @@
             }
         }
     </script></body>
-</html>
+<a href="https://t.me/invitnew" target="_blank" class="telegram-banner-link">
+  <div class="telegram-banner-container">
+    <div class="marquee-box">
+      <span class="marquee-text">
+        📢 Join Our Telegram Channel &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 📢 Join Our Telegram Channel &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      </span>
+    </div>
+    <button class="join-btn">Join Now</button>
+  </div>
+</a>
 /* Banner Main Container Style */
 .telegram-banner-link {
   text-decoration: none; /* Link underline hatane ke liye */
   display: block;
   margin: 15px auto;
-  max-width: 600px; /* 
+  max-width: 600px; /* Aap isse chota-bada kar sakte hain */
   width: 90%;
 }
 
