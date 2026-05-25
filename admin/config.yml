@@ -1,0 +1,20 @@
+backend:
+  name: git-gateway
+  branch: main # Agar aapki branch ka naam 'master' hai toh yahan master likhein
+
+media_folder: "images" # Aapki images is folder mein save hongi
+public_folder: "images"
+
+collections:
+  - name: "games"
+    label: "All Games"
+    folder: "data/games"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Game Name", name: "title", widget: "string" }
+      - { label: "App Download Link", name: "app_link", widget: "string" }
+      - { label: "Image Link (URL)", name: "image_link", widget: "string" }
+      - { label: "Bonus Text", name: "bonus", widget: "string", default: "Bonus 100" }
+      - { label: "Withdrawal Text", name: "withdrawal", widget: "string", default: "Withdrawal 100" }
+      
