@@ -351,15 +351,14 @@
                 }
             }
         }
-    </script>
-</body>
+    </script></body>
 </html>
 /* Banner Main Container Style */
 .telegram-banner-link {
   text-decoration: none; /* Link underline hatane ke liye */
   display: block;
   margin: 15px auto;
-  max-width: 600px; /* Aap isse chota-bada kar sakte hain */
+  max-width: 600px; /* 
   width: 90%;
 }
 
