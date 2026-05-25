@@ -348,89 +348,43 @@
 
                 } else {
                     gameItems[i].style.display = "none";
-                }
-            }
-        }
-    </script></body>
-<a href="https://t.me/invitnew" target="_blank" class="telegram-banner-link">
-  <div class="telegram-banner-container">
-    <div class="marquee-box">
-      <span class="marquee-text">
-        📢 Join Our Telegram Channel &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 📢 Join Our Telegram Channel &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      </span>
-    </div>
-    <button class="join-btn">Join Now</button>
+<a href="https://t.me/invitnew" target="_blank" class="telegram-banner">
+  <div class="scroll-text">
+    🚀 Join Our Telegram Channel 🚀 Join Our Telegram Channel 🚀
   </div>
 </a>
-/* Banner Main Container Style */
-.telegram-banner-link {
-  text-decoration: none; /* Link underline hatane ke liye */
-  display: block;
-  margin: 15px auto;
-  max-width: 600px; /* Aap isse chota-bada kar sakte hain */
-  width: 90%;
+
+<style>
+.telegram-banner {
+  position: fixed;
+  top: 10px;
+  left: 0;
+  width: 220px;
+  height: 35px;
+  background: linear-gradient(90deg, #0088cc, #00bfff);
+  overflow: hidden;
+  border-radius: 0 20px 20px 0;
+  text-decoration: none;
+  z-index: 9999;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
 
-.telegram-banner-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background-color: #f0f7ff; /* Halka blue background */
-  border: 2px solid #1e65a3; /* Dark blue border */
-  border-radius: 12px; /* Curved corners */
-  padding: 10px 15px;
-  overflow: hidden;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-  cursor: pointer;
-  position: relative;
-}
-
-/* Rolling Text Container */
-.marquee-box {
-  flex: 1;
-  overflow: hidden;
+.scroll-text {
   white-space: nowrap;
-  display: flex;
-  align-items: center;
-}
-
-/* Rolling Text Animation */
-.marquee-text {
-  display: inline-block;
-  font-family: Arial, sans-serif;
-  font-size: 18px;
+  color: white;
+  font-size: 14px;
   font-weight: bold;
-  color: #114b7a; /* Image jaisa blue color */
-  padding-right: 50px;
-  animation: rollText 10s linear infinite; /* 10s se speed control hogi */
+  line-height: 35px;
+  padding-left: 100%;
+  animation: scrollText 8s linear infinite;
 }
 
-@keyframes rollText {
+@keyframes scrollText {
   0% {
-    transform: translateX(100%);
+    transform: translateX(0);
   }
   100% {
     transform: translateX(-100%);
   }
 }
-
-/* Button Style */
-.join-btn {
-  background-color: #005691; /* Dark blue button */
-  color: white;
-  border: none;
-  border-radius: 8px;
-  padding: 10px 20px;
-  font-size: 16px;
-  font-weight: bold;
-  cursor: pointer;
-  white-space: nowrap;
-  margin-left: 10px;
-  transition: background 0.3s ease;
-  z-index: 2; /* Taaki button text ke upar rahe */
-}
-
-/* Button Hover Effect */
-.join-btn:hover {
-  background-color: #003d66;
-}
+</style>
