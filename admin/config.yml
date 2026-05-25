@@ -1,8 +1,7 @@
 backend:
   name: github
-  repo: suhagthakor3262-lang/username.github.13 # Aapki repository ka naam
+  repo: suhagthakor3262-lang/username.github.13
   branch: main
-  base_url: https://identity.netlify.com # Yeh free identity tool background mein kaam karega
 
 media_folder: "images"
 public_folder: "images"
