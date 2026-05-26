@@ -295,7 +295,7 @@
 
 </body>
 </html>
-    <script>
+<script>
         function filterGames() {
             // User ne kya type kiya use lowercase (chote aksharo) me convert karein
             let input = document.getElementById('searchBox').value.toLowerCase();
