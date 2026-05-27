@@ -96,37 +96,37 @@
             padding: 0 15px;
         }
 
-        /* Filter Tabs */
+        /* Filter Tabs - Sirf 2 buttons rakhe hain ab */
         .tabs-container {
             display: flex;
             justify-content: center;
-            gap: 8px;
+            gap: 15px;
             margin-bottom: 25px;
             padding: 0 15px;
             max-width: 600px;
             margin-left: auto;
             margin-right: auto;
-            overflow-x: auto;
-            white-space: nowrap;
         }
 
         .tab-btn {
-            padding: 10px 18px;
+            flex: 1;
+            max-width: 150px;
+            padding: 12px 0;
             background-color: #e0e0e0;
-            border-radius: 6px;
+            border-radius: 8px;
             color: #444;
-            font-weight: 500;
-            font-size: 14px;
+            font-weight: bold;
+            font-size: 15px;
             border: none;
             cursor: pointer;
+            text-align: center;
             transition: 0.2s;
         }
 
         .tab-btn.active {
             background-color: white;
             color: #1a2229;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            font-weight: bold;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
 
         /* Games Grid System */
@@ -233,7 +233,7 @@
 
     <!-- Search Input Area -->
     <div class="search-container">
-        <input type="text" id="searchBox" class="search-box" placeholder="What you want to search ?" onkeyup="filterGames()">
+        <input type="text" id="searchBox" class="search-box" placeholder="What you want to search ?" oninput="filterGames()">
     </div>
 
     <!-- Scrolling Telegram Link -->
@@ -247,19 +247,16 @@
     <h2 class="section-title">New on Game</h2>
     <p class="section-subtitle">Discover what's new on Game and enjoy the best new game.</p>
 
-    <!-- Filter Tabs Options -->
+    <!-- Filter Tabs Options (Sirf 2 buttons) -->
     <div class="tabs-container">
-        <button class="tab-btn active" onclick="filterCategory('casino', this)">Casinos</button>
-        <button class="tab-btn" onclick="filterCategory('hot', this)">Hot Game 🔥</button>
-        <button class="tab-btn" onclick="filterCategory('news', this)">News</button>
-        <button class="tab-btn" onclick="filterCategory('bonuses', this)">Bonuses</button>
-        <button class="tab-btn" onclick="filterCategory('promo', this)">Promocode</button>
+        <button class="tab-btn active" id="btn-casino" onclick="changeTab('casino')">Casinos</button>
+        <button class="tab-btn" id="btn-hot" onclick="changeTab('hot')">Hot Game 🔥</button>
     </div>
 
     <!-- Games Grid Container -->
     <div class="games-grid">
 
-        <!-- ================= NAYI 10 HOT GAMES ================= -->
+        <!-- ================= 10 HOT GAMES ================= -->
 
         <!-- Nayi Game 1: Spin 101 -->
         <div class="game-card" data-category="hot">
@@ -372,7 +369,7 @@
         </div>
 
 
-        <!-- ================= PURANI 10 CASINO GAMES ================= -->
+        <!-- ================= 10 CASINO GAMES ================= -->
 
         <!-- Game 1: Yono rummy -->
         <div class="game-card" data-category="casino">
@@ -476,61 +473,60 @@
 
     </div>
 
-    <!-- Search & Tab Filtering Logic Script -->
+    <!-- Sahi Kiya Hua Pure JavaScript Logic -->
     <script>
-        // Search Bar Function
-        function filterGames() {
-            let input = document.getElementById('searchBox').value.toLowerCase();
-            let cards = document.getElementsByClassName('game-card');
-            let activeTab = document.querySelector('.tab-btn.active').getAttribute('onclick');
+        // Global variable tracking active tab ('casino' ya 'hot')
+        let currentTab = 'casino';
+
+        // Tab badalne ka function (Ab ekdam bulletproof hai)
+        function changeTab(tabName) {
+            currentTab = tabName;
             
-            // Determine active category
-            let currentCategory = 'casino';
-            if(activeTab.includes('hot')) currentCategory = 'hot';
-            if(activeTab.includes('news') || activeTab.includes('bonuses') || activeTab.includes('promo')) currentCategory = 'empty';
+            // Clear search box text when swapping tabs
+            document.getElementById('searchBox').value = "";
+
+            // Active Tab classes switch karne ke liye
+            if (tabName === 'casino') {
+                document.getElementById('btn-casino').classList.add('active');
+                document.getElementById('btn-hot').classList.remove('active');
+            } else {
+                document.getElementById('btn-hot').classList.add('active');
+                document.getElementById('btn-casino').classList.remove('active');
+            }
+
+            // Games dikhane aur chhupane ka real-time system
+            renderGames();
+        }
+
+        // Search Bar Functionality (Instant filter update)
+        function filterGames() {
+            renderGames();
+        }
+
+        // Core logic jisse search aur filter dono sath me kaam kare bina crash huye
+        function renderGames() {
+            let searchText = document.getElementById('searchBox').value.toLowerCase();
+            let cards = document.getElementsByClassName('game-card');
 
             for (let i = 0; i < cards.length; i++) {
-                let gameNameElement = cards[i].getElementsByClassName('game-name')[0];
                 let cardCategory = cards[i].getAttribute('data-category');
-                
-                if (gameNameElement) {
-                    let gameName = gameNameElement.textContent || gameNameElement.innerText;
-                    
-                    // Match name AND check if it belongs to the active tab category
-                    if (gameName.toLowerCase().indexOf(input) > -1 && cardCategory === currentCategory) {
-                        cards[i].style.display = "";
-                    } else {
-                        cards[i].style.display = "none";
-                    }
+                let gameNameElement = cards[i].getElementsByClassName('game-name')[0];
+                let gameName = gameNameElement ? (gameNameElement.textContent || gameNameElement.innerText).toLowerCase() : "";
+
+                // Condition: Tab bhi sahi hona chahiye aur search text bhi match hona chahiye
+                if (cardCategory === currentTab && gameName.includes(searchText)) {
+                    cards[i].style.display = ""; // Dikhayein
+                } else {
+                    cards[i].style.display = "none"; // Chhupayein
                 }
             }
         }
 
-        // Tab Filter Function
-        function filterCategory(category, button) {
-            let tabs = document.getElementsByClassName('tab-btn');
-            for(let i=0; i<tabs.length; i++) {
-                tabs[i].classList.remove('active');
-            }
-            button.classList.add('active');
+        // Page load hote hi automatically Casinos tab set karega
+        window.onload = function() {
+            changeTab('casino');
+        };
+    </script>
 
-            // Clear search box text when switching tabs
-            document.getElementById('searchBox').value = "";
-
-            let cards = document.getElementsByClassName('game-card');
-            for (let i = 0; i < cards.length; i++) {
-                let cardCategory = cards[i].getAttribute('data-category');
-                
-                if (category === 'casino') {
-                    if(cardCategory === 'casino') {
-                        cards[i].style.display = "";
-                    } else {
-                        cards[i].style.display = "none";
-                    }
-                } else if (category === 'hot') {
-                    if(cardCategory === 'hot') {
-                        cards[i].style.display = "";
-                    } else {
-                        cards[i].style.display = "none";
-                    }
-         
+</body>
+</html>
