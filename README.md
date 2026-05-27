@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -130,7 +131,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            border-radius: 50%; /* Image ko ekdam gol rakhta hai jaisa screenshot me hai */
+            border-radius: 50%;
         }
 
         .rating {
@@ -171,7 +172,6 @@
             color: white;
         }
 
-        /* Mobile Optimization */
         @media (max-width: 360px) {
             .games-grid {
                 grid-template-columns: 1fr;
@@ -187,7 +187,7 @@
     </header>
 
     <div class="search-container">
-        <input type="text" class="search-box" placeholder="What you want to search ?">
+        <input type="text" id="searchBox" class="search-box" placeholder="What you want to search ?" onkeyup="filterGames()">
     </div>
 
     <div class="telegram-ticker">
@@ -292,47 +292,16 @@
         </div>
 
     </div>
-</body>
-</html>
-<script>
-        function filterGames() {
-            // User ne kya type kiya use lowercase (chote aksharo) me convert karein
-            let input = document.getElementById('searchBox').value.toLowerCase();
-            
-            // Saare game cards ko select karein
-            let cards = document.getElementsByClassName('game-card');
-            
-            // Har card par loop chalayein aur check karein ki naam match hota hai ya nahi
-            for (let i = 0; i < cards.length; i++) {
-                let gameNameElement = cards[i].getElementsByClassName('game-name')[0];
-                if (gameNameElement) {
-                    let gameName = gameNameElement.textContent || gameNameElement.innerText;
-                    
-                    // Agar naam match hota hai toh dikhayein, nahi toh hide kar dein
-                    if (gameName.toLowerCase().indexOf(input) > -1) {
-                        cards[i].style.display = "";
-                    } else {
-                        cards[i].style.display = "none";
-                    }
-                }
-            }
-        }
-    </script></
+
     <script>
         function filterGames() {
-            // User ne kya type kiya use lowercase (chote aksharo) me convert karein
             let input = document.getElementById('searchBox').value.toLowerCase();
-            
-            // Saare game cards ko select karein
             let cards = document.getElementsByClassName('game-card');
             
-            // Har card par loop chalayein aur check karein ki naam match hota hai ya nahi
             for (let i = 0; i < cards.length; i++) {
                 let gameNameElement = cards[i].getElementsByClassName('game-name')[0];
                 if (gameNameElement) {
                     let gameName = gameNameElement.textContent || gameNameElement.innerText;
-                    
-                    // Agar naam match hota hai toh dikhayein, nahi toh hide kar dein
                     if (gameName.toLowerCase().indexOf(input) > -1) {
                         cards[i].style.display = "";
                     } else {
@@ -342,5 +311,6 @@
             }
         }
     </script>
-</body>
 
+</body>
+</html>
