@@ -318,4 +318,30 @@
                 }
             }
         }
-    </script></body>
+    </script></
+    <script>
+        function filterGames() {
+            // User ne kya type kiya use lowercase (chote aksharo) me convert karein
+            let input = document.getElementById('searchBox').value.toLowerCase();
+            
+            // Saare game cards ko select karein
+            let cards = document.getElementsByClassName('game-card');
+            
+            // Har card par loop chalayein aur check karein ki naam match hota hai ya nahi
+            for (let i = 0; i < cards.length; i++) {
+                let gameNameElement = cards[i].getElementsByClassName('game-name')[0];
+                if (gameNameElement) {
+                    let gameName = gameNameElement.textContent || gameNameElement.innerText;
+                    
+                    // Agar naam match hota hai toh dikhayein, nahi toh hide kar dein
+                    if (gameName.toLowerCase().indexOf(input) > -1) {
+                        cards[i].style.display = "";
+                    } else {
+                        cards[i].style.display = "none";
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+
