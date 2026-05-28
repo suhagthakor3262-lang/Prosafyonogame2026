@@ -1,30 +1,32 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <!-- SEO Meta Tags - Search me aane ke liye -->
+    <!-- SEO Meta Tags -->
     <meta name="description" content="Download best Rummy, Slots, and Casino games at ProSafe Bet. Latest APKs available.">
     <meta name="keywords" content="Yono Rummy, Spin 777, Spin Crush, 567 Slots, IND Rummy, Jaiho 91, Bingo 101, 101Z, Rumble Rummy, ProSafe Bet, Online Casino Games India, Best Rummy APK">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ProSafe Bet - All Games</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-        body { background-color: #f5f5f5; color: #333; display: flex; flex-direction: column; min-height: 100vh; }
+        body { background-color: #f5f5f5; color: #333; display: flex; flex-direction: column; min-height: 100vh; width: 100%; overflow-x: hidden; }
         
-        /* Header Style with Colors & Three-Dots */
+        /* Header Fix: Poore screen par dono side tak lamba kar diya */
         header { 
             background-color: #1a2229; 
-            padding: 15px 20px; 
+            padding: 18px 25px; 
             display: flex; 
             justify-content: space-between; 
             align-items: center; 
             position: sticky; 
             top: 0; 
-            z-index: 100; 
+            z-index: 100;
+            width: 100%;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
         }
         
         /* Colorful Logo Setup */
         .logo { 
-            font-size: 22px; 
+            font-size: 24px; 
             font-weight: bold; 
             letter-spacing: 0.5px;
         }
@@ -35,7 +37,7 @@
         /* Three Dot Icon Style */
         .three-dots {
             color: white;
-            font-size: 24px;
+            font-size: 26px;
             cursor: pointer;
             padding: 0 5px;
             user-select: none;
@@ -90,68 +92,51 @@
         }
 
         /* Menu Links and Info Style */
-        .menu-item {
-            margin-bottom: 15px;
-        }
+        .menu-item { margin-bottom: 15px; }
+        .menu-link-btn { display: inline-block; text-decoration: none; color: #1e88e5; font-weight: bold; font-size: 16px; margin-bottom: 5px; }
+        .menu-text { font-size: 13px; color: #555; line-height: 1.4; padding-left: 2px; }
+        .warning-text { color: #d32f2f; font-weight: 500; }
+
+        /* Middle Section Main Elements: Size badha kar 800px kar di dono side se */
+        .search-container { padding: 25px 15px 10px 15px; max-width: 800px; margin: 0 auto; width: 100%; }
+        .search-box { width: 100%; padding: 14px 20px; border: 1px solid #ccc; border-radius: 8px; font-size: 16px; outline: none; }
         
-        .menu-link-btn {
-            display: inline-block;
-            text-decoration: none;
-            color: #1e88e5;
-            font-weight: bold;
-            font-size: 16px;
-            margin-bottom: 5px;
-        }
-
-        .menu-text {
-            font-size: 13px;
-            color: #555;
-            line-height: 1.4;
-            padding-left: 2px;
-        }
-
-        .warning-text {
-            color: #d32f2f;
-            font-weight: 500;
-        }
-
-        /* Main Elements */
-        .search-container { padding: 20px 15px 10px 15px; max-width: 600px; margin: 0 auto; width: 100%; }
-        .search-box { width: 100%; padding: 12px 20px; border: 1px solid #ccc; border-radius: 8px; font-size: 16px; outline: none; }
-        
-        .tabs-container { display: flex; justify-content: center; gap: 15px; margin-bottom: 25px; padding: 0 15px; max-width: 600px; margin-left: auto; margin-right: auto; }
-        .tab-btn { flex: 1; max-width: 150px; padding: 12px 0; background-color: #e0e0e0; border-radius: 8px; color: #444; font-weight: bold; font-size: 15px; border: none; cursor: pointer; text-align: center; }
+        .tabs-container { display: flex; justify-content: center; gap: 15px; margin-bottom: 25px; padding: 0 15px; max-width: 800px; margin-left: auto; margin-right: auto; width: 100%; }
+        .tab-btn { flex: 1; max-width: 180px; padding: 12px 0; background-color: #e0e0e0; border-radius: 8px; color: #444; font-weight: bold; font-size: 15px; border: none; cursor: pointer; text-align: center; }
         .tab-btn.active { background-color: white; color: #1a2229; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
         
-        .games-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; padding: 0 15px 40px 15px; max-width: 600px; margin: 0 auto; flex: 1; }
-        .game-card { background: white; border-radius: 12px; padding: 20px 12px; text-align: center; box-shadow: 0 4px 6px rgba(0,0,0,0.05); display: flex; flex-direction: column; align-items: center; }
+        /* Games Grid Fix: Games ki size dono taraf se badha di */
+        .games-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; padding: 0 15px 40px 15px; max-width: 800px; margin: 0 auto; flex: 1; width: 100%; }
+        .game-card { background: white; border-radius: 14px; padding: 22px 15px; text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.06); display: flex; flex-direction: column; align-items: center; }
         
         .hot-badge { background-color: #ff3d00; color: white; font-size: 11px; font-weight: bold; padding: 2px 8px; border-radius: 20px; margin-bottom: 8px; text-transform: uppercase; }
-        .game-image-wrapper { width: 110px; height: 110px; margin-bottom: 12px; display: flex; justify-content: center; align-items: center; }
+        .game-image-wrapper { width: 115px; height: 115px; margin-bottom: 12px; display: flex; justify-content: center; align-items: center; }
         .game-img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
-        .game-name { font-size: 14px; font-weight: 600; color: #222; margin-bottom: 15px; height: 20px; overflow: hidden; text-transform: uppercase; }
+        .game-name { font-size: 15px; font-weight: 600; color: #222; margin-bottom: 15px; height: 20px; overflow: hidden; text-transform: uppercase; }
         
-        .play-btn { display: block; width: 100%; padding: 10px 0; background-color: #e3f2fd; color: #1e88e5; text-decoration: none; font-weight: bold; border-radius: 6px; font-size: 14px; }
+        .play-btn { display: block; width: 100%; padding: 11px 0; background-color: #e3f2fd; color: #1e88e5; text-decoration: none; font-weight: bold; border-radius: 6px; font-size: 14px; text-align: center; }
         
-        /* Footer Layout Style */
+        /* Footer Fix: Poore screen par neeche dono kinaro tak lamba kar diya */
         footer {
             background-color: #1a2229;
             color: #999;
             text-align: center;
-            padding: 15px;
-            font-size: 13px;
+            padding: 18px;
+            font-size: 14px;
             border-top: 2px solid #2e3942;
             margin-top: auto;
+            width: 100%;
         }
 
-        @media (max-width: 360px) {
-            .games-grid { grid-template-columns: 1fr; }
+        @media (max-width: 400px) {
+            .games-grid { gap: 12px; padding: 0 10px 30px 10px; }
+            .game-image-wrapper { width: 100px; height: 100px; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Header Area with Colorful Logo and 3-Dots -->
+    <!-- Header Area with Full Width and Colorful Logo -->
     <header>
         <div class="logo">
             <span class="wht">Pro</span><span class="grn">Safe</span><span class="ylw">Bet</span>
@@ -159,7 +144,7 @@
         <div class="three-dots" onclick="toggleMenu(true)">&#8942;</div>
     </header>
 
-    <!-- Navigation Popup Menu Overlay (Modal) -->
+    <!-- Navigation Popup Menu Overlay -->
     <div class="menu-overlay" id="menuOverlay" onclick="toggleMenu(false)">
         <div class="menu-content" onclick="event.stopPropagation()">
             <div class="menu-header">
@@ -167,21 +152,18 @@
                 <span class="close-btn" onclick="toggleMenu(false)">&times;</span>
             </div>
             
-            <!-- Home Option -->
             <div class="menu-item">
                 <a href="#" class="menu-link-btn" onclick="goHome()">🏠 Home</a>
                 <p class="menu-text">Go back to the main gaming area.</p>
             </div>
             
-            <!-- Contact Option -->
             <div class="menu-item">
                 <a href="https://t.me/invitnew" target="_blank" class="menu-link-btn">📞 Contact (Telegram)</a>
                 <p class="menu-text">Latest update or free promo code join telegram channel.</p>
             </div>
             
-            <!-- About Option -->
             <div class="menu-item">
-                <span class="menu-link-btn" style="color:#222; cursor:default;">ℹ️ About Us</span>
+                <span class="menu-link-btn" style="color:#222; cursor:default;">ℹ  About Us</span>
                 <p class="menu-text warning-text">Warning ⚠️: This game involves financial risk. Restricted for 18+ players only. Please play responsibly.</p>
             </div>
         </div>
@@ -198,7 +180,7 @@
         <button class="tab-btn" id="btn-hot" onclick="changeTab('hot')">Hot Game 🔥</button>
     </div>
 
-    <!-- Games Grid Container -->
+    <!-- Games Grid Container (Badhi hui size ke sath) -->
     <div class="games-grid">
 
         <!-- ================= 10 HOT GAMES ================= -->
@@ -227,28 +209,25 @@
 
     </div>
 
-    <!-- Footer System Section -->
+    <!-- Footer Area with Full Width -->
     <footer>
         &copy; 2026 ProSafe Bet. All Rights Reserved.
     </footer>
 
-    <!-- JavaScript Area -->
+    <!-- JavaScript Logic Area -->
     <script>
         let currentTab = 'casino';
 
-        // Toggle Three-Dot Overlay
         function toggleMenu(show) {
             document.getElementById('menuOverlay').style.display = show ? 'flex' : 'none';
         }
 
-        // Home button function inside popup menu
         function goHome() {
             toggleMenu(false);
             changeTab('casino');
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        // Tab selection function
         function changeTab(tabName) {
             currentTab = tabName;
             document.getElementById('searchBox').value = "";
@@ -263,12 +242,10 @@
             renderGames();
         }
 
-        // Instant Filter Search Input Box Logic
         function filterGames() {
             renderGames();
         }
 
-        // Dynamic element printer handler
         function renderGames() {
             let searchText = document.getElementById('searchBox').value.toLowerCase();
             let cards = document.getElementsByClassName('game-card');
