@@ -22,7 +22,7 @@
             background: #1a1a1a;
             padding: 12px;
             border-radius: 10px;
-            margin-bottom: 25px;
+            margin-bottom: 15px;
             display: flex;
             align-items: center;
             border: 1px solid #2a2a2a;
@@ -48,6 +48,25 @@
             font-weight: bold;
             font-size: 14px;
         }
+        /* 🔍 PREMIUM LIVE SEARCH BAR */
+        .search-container {
+            margin-bottom: 20px;
+            position: relative;
+        }
+        .search-input {
+            width: 100%;
+            padding: 14px 15px;
+            background: #1a1a1a;
+            border: 1px solid #333;
+            border-radius: 10px;
+            color: #fff;
+            font-size: 15px;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+        .search-input:focus {
+            border-color: #00ffcc;
+        }
         /* 📱 PREMIUM BLACK CARDS LAYOUT */
         .game-container {
             display: flex;
@@ -61,6 +80,7 @@
             padding: 20px;
             text-align: center;
             border: 1px solid #2a2a2a;
+            transition: transform 0.2s;
         }
         .list-game-img {
             width: 85px;
@@ -117,7 +137,6 @@
             font-weight: bold;
             text-decoration: none;
             font-size: 16px;
-            transition: background 0.2s;
         }
         .play-btn:hover {
             background: #00ccaa;
@@ -168,8 +187,13 @@
         <div class="ticker-text">User ID 234*** just won ₹22,400 in Club INR!</div>
     </div>
 
+    <!-- 🔍 LIVE SEARCH BAR -->
+    <div class="search-container">
+        <input type="text" id="gameSearch" class="search-input" placeholder="Search your favorite game here...">
+    </div>
+
     <!-- 🎮 MAIN GAME LIST (PREMIUM BLACK CARDS) -->
-    <div class="game-container">
+    <div class="game-container" id="gameContainer">
 
         <!-- Yono 777 Card -->
         <div class="game-card">
@@ -265,8 +289,9 @@
         © 2026 ProSafe Yono Games. All Rights Reserved. Verified Secure Portal.
     </div>
 
-    <!-- Live Counting Counter Script -->
+    <!-- Live Counting & Live Search Script -->
     <script>
+        // --- 1. LIVE WINNING COUNTER SYSTEM ---
         const names = ["User ID 482***", "User ID 915***", "User ID 234***", "User ID 771***", "User ID 609***"];
         const amounts = ["₹13,500", "₹5,000", "₹22,400", "₹8,800", "₹11,200"];
         const games = ["Yono 777", "IND Club", "567 Slots", "Club INR", "Jaiho 91"];
@@ -277,6 +302,23 @@
             const randGame = games[Math.floor(Math.random() * games.length)];
             document.querySelector('.ticker-text').innerText = `${randName} just won ${randAmount} in ${randGame}!`;
         }, 4000);
+
+        // --- 2. LIVE SEARCH FILTER SYSTEM ---
+        const searchInput = document.getElementById('gameSearch');
+        const gameCards = document.querySelectorAll('.game-card');
+
+        searchInput.addEventListener('input', function() {
+            const filterValue = searchInput.value.toLowerCase().trim();
+            
+            gameCards.forEach(card => {
+                const gameTitle = card.querySelector('.game-title').innerText.toLowerCase();
+                if (gameTitle.includes(filterValue)) {
+                    card.style.display = "block"; // Card dikhao
+                } else {
+                    card.style.display = "none";  // Card chhupao
+                }
+            });
+        });
     </script>
 </body>
 </html>
